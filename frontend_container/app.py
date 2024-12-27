@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify
-import pandas as pd
 import os, datetime
+import pandas as pd
+from flask import Flask, request, jsonify
 
 
 app = Flask(__name__)
@@ -22,16 +22,20 @@ def recommendation():
     global association_rules
 
     if association_rules is None:
-        association_rules = pd.read_pickle('model.pkl')
+        association_rules = pd.read_pickle('models/model.pkl')
 
     data = request.json
     liked_songs = data.get('songs')
 
     recommended_songs = recommend_songs(association_rules, liked_songs)
+    
+    version = os.getenv("VERSION")
+    if version is None:
+        version = '0.0.1'
 
     return jsonify({
         'songs': recommended_songs,
-        'version': '0.0.1',
+        'version': version,
         'model_date': datetime.datetime.fromtimestamp((os.stat('model.pkl')).st_ctime)
     })
 

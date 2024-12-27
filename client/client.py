@@ -1,11 +1,11 @@
 import requests
 
-ip = '127.0.0.1'
+# ip = '127.0.0.1'
+ip = 'localhost'
 port = 30502
 endpoint = 'api/recommend'
 
 url = f'http://{ip}:{port}/{endpoint}'
-#data = {"songs": ["Yesterday", "Bohemian Rhapsody"]}
 data = {"songs": ['Mask Off', 'DNA.']}
 headers = {'Content-Type': 'application/json'}
 
