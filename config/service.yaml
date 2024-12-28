@@ -1,0 +1,15 @@
+# consultei a Llm sobre exposição (nodeport's) externa ao container
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: iagorios
+  name: playlist-recommendation-service
+spec:
+  selector:
+    app: playlist-recommendation
+  ports:
+    - protocol: TCP
+      port: 52030
+      targetPort: 52030
+      nodePort: 30500
+  type: NodePort

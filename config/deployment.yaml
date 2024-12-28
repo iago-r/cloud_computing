@@ -1,20 +1,43 @@
+# pedi auxilio a uma llm sobre como fazer um container que inicie antes do outro
+# e como criar variáveis de ambiente 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ml-model-deployment
+  namespace: iagorios
+  name: playlist-recommendation-deployment
+  labels:
+    app: playlist-recommendation
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ml-model
+      app: playlist-recommendation
   template:
     metadata:
       labels:
-        app: ml-model
+        app: playlist-recommendation
     spec:
-      containers:
-      - name: ml-model
-        image: your-docker-image:latest
+      initContainers:
+      - name: playlists-recommender-ml
+        image: iagosrios/playlists-recommender-ml:0.1
         env:
         - name: DATASET_URL
-          value: "https://path/to/your/dataset"
+          value: "https://github.com/iago-r/cloud_computing/raw/refs/heads/main/assets/datasets/2023_spotify_ds1.csv"
+        volumeMounts:
+        - name: models
+          mountPath: /models
+      containers:
+      - name: playlists-recommender-frontend
+        image: iagosrios/playlists-recommender-frontend:0.1
+        ports:
+        - containerPort: 52030
+        env:
+        - name: VERSION
+          value: 0.0.1
+        volumeMounts:
+        - name: models
+          mountPath: /models
+      volumes:
+      - name: models
+        persistentVolumeClaim:
+          claimName: project2-pv2-iagorios
