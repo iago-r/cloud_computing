@@ -36,7 +36,7 @@ def recommendation():
     return jsonify({
         'songs': recommended_songs,
         'version': version,
-        'model_date': datetime.datetime.fromtimestamp((os.stat('model.pkl')).st_ctime)
+        'model_date': datetime.datetime.fromtimestamp((os.stat('/models/model.pkl')).st_ctime)
     })
 
 if __name__ == '__main__':
