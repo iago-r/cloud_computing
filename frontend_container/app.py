@@ -22,7 +22,7 @@ def recommendation():
     global association_rules
 
     if association_rules is None:
-        association_rules = pd.read_pickle('models/model.pkl')
+        association_rules = pd.read_pickle('/models/model.pkl')
 
     data = request.json
     liked_songs = data.get('songs')

@@ -41,4 +41,4 @@ if __name__ == "__main__":
         raise ValueError("A variável de ambiente não está definida.")
     
     df = pd.read_csv(dataset_url, delimiter=',') # troquei o delimiter ';' para ','
-    create_association_rules(df, min_support=0.05, min_threshold=0.5, save_path='models/model.pkl')
+    create_association_rules(df, min_support=0.05, min_threshold=0.5, save_path='/models/model.pkl')
