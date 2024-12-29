@@ -4,6 +4,7 @@ metadata:
   namespace: iagorios
   name: project2-pv2-iagorios
 spec:
+  volumeName: project2-pv2-iagorios
   storageClassName: default-storage-class-iagorios
   accessModes:
     - ReadWriteMany
