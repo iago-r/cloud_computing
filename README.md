@@ -16,7 +16,7 @@
 │   ├── /datasets        # Datasets utilizados no treino das recomendações
 │   └── /musics_list     # Lista de músicas utilizada para simular a comunicação do cliente com o servidor
 │
-├── /client              # Código do frontend
+├── /client              # Código para simular requisições do cliente
 │   └── client.py        # Script para simular a comunicação do cliente com o servidor
 │
 ├── /config              # Arquivos de configuração do Kubernetes para implantação dos serviços
