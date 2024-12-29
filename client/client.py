@@ -1,8 +1,10 @@
+# código versão python
+# depois vou fazer uma em bash
 import requests
 
 # ip = '127.0.0.1'
 ip = 'localhost'
-port = 30502
+port = 30500
 endpoint = 'api/recommend'
 
 url = f'http://{ip}:{port}/{endpoint}'
