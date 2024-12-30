@@ -1,37 +1,68 @@
-# DevOps
+# DevOps - Playlist Recommendation System  
 
-### Pré-requisitos
+![Kubernetes](https://img.shields.io/badge/Kubernetes-✓-blue)  
+![ArgoCD](https://img.shields.io/badge/ArgoCD-✓-orange)  
+![MachineLearning](https://img.shields.io/badge/Machine%20Learning-✓-green)  
 
-- [Docker](https://www.docker.com/get-started)
-- [Kubernetes](https://kubernetes.io/docs/setup/)
-- [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)
-- [Python 3.8+](https://www.python.org/downloads/)
+## Description  
 
-## Estrutura do Repositório
+This project was developed as part of the **Cloud Computing** course in the second semester of 2024 at the **Federal University of Minas Gerais (UFMG)**. It implements a playlist recommendation system based on machine learning. The solution is deployed in a **Kubernetes** environment, using **DevOps** and **MLOps** practices for continuous integration and delivery. The system analyzes Spotify datasets, generates association rules, and recommends personalized playlists to users.  
 
-```
+## Architecture  
+
+The system architecture consists of:  
+
+- **Machine Learning Backend**: Generates association rules and trains models.  
+- **Frontend**: Exposes a REST API for recommendation queries.  
+- **Persistent Volume**: Stores models and data shared between services.  
+- **Kubernetes**: Orchestrates containers and system resources.  
+- **ArgoCD**: Manages the continuous deployment of the application.  
+
+## Project Structure  
+
+```plaintext
 /cloud_computing
 │
-├── /assets              # Datasets e listas de músicas
-│   ├── /datasets        # Datasets utilizados no treino das recomendações
-│   └── /musics_list     # Lista de músicas utilizada para simular a comunicação do cliente com o servidor
+├── /assets              # Datasets and music lists
+│   ├── /datasets        # Datasets used to train the recommendation model
+│   └── /musics_list     # List of songs used to simulate client-server communication
 │
-├── /client              # Código para simular requisições do cliente
-│   └── client.py        # Script para simular a comunicação do cliente com o servidor
+├── /client              # Code to simulate client requests
+│   └── client.py        # Script to simulate client-server communication
 │
-├── /config              # Arquivos de configuração do Kubernetes para implantação dos serviços
-│   ├── deployment.yaml  # Definições de deployment para Kubernetes
-│   └── service.yaml     # Definições de serviço para Kubernetes
+├── /config              # Kubernetes configuration files for service deployment
+│   ├── deployment.yaml  # Deployment definitions for Kubernetes
+│   └── service.yaml     # Service definitions for Kubernetes
 │
-├── /frontend_container  # Container com o frontend e scripts relacionados à sua implantação
-│   ├── Dockerfile       # Arquivo Dockerfile para a construção do container do frontend
-│   ├── app.py           # Lógica principal do frontend e API REST
-│   └── requirements.txt # Dependências para o frontend
+├── /frontend_container  # Container with the frontend and related deployment scripts
+│   ├── Dockerfile       # Dockerfile for building the frontend container
+│   ├── app.py           # Main logic of the frontend and REST API
+│   └── requirements.txt # Dependencies for the frontend
 │
-├── /ml_container        # Container com o backend e a lógica de aprendizado de máquina
-│   ├── Dockerfile       # Arquivo Dockerfile para a construção do container do backend
-│   ├── playlist_recommender.py # Lógica de recomendação de playlists
-│   └── requirements.txt # Dependências para o backend
+├── /ml_container        # Container with the backend and machine learning logic
+│   ├── Dockerfile       # Dockerfile for building the backend container
+│   ├── playlist_recommender.py # Playlist recommendation logic
+│   └── requirements.txt # Dependencies for the backend
 │
-└── README.md            # Este arquivo
-```
+└── README.md            # This file
+```  
+
+## Technologies  
+
+- **Languages**: Python, Flask  
+- **Tools**: Docker, Kubernetes, ArgoCD  
+- **Machine Learning**: Association rules (Frequent Itemset Mining)  
+- **Database**: Persistent Volume for data storage  
+
+## Prerequisites  
+
+Make sure you have the following tools installed:  
+
+- [Docker](https://www.docker.com/get-started)  
+- [Kubernetes](https://kubernetes.io/docs/setup/)  
+- [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)  
+- [Python 3.8+](https://www.python.org/downloads/)  
+
+## License  
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.  
