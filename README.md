@@ -1,8 +1,6 @@
 # DevOps - Playlist Recommendation System  
 
-![Kubernetes](https://img.shields.io/badge/Kubernetes-✓-blue)  
-![ArgoCD](https://img.shields.io/badge/ArgoCD-✓-orange)  
-![MachineLearning](https://img.shields.io/badge/Machine%20Learning-✓-green)  
+![Kubernetes](https://img.shields.io/badge/Kubernetes-✓-blue) ![ArgoCD](https://img.shields.io/badge/ArgoCD-✓-orange) ![MachineLearning](https://img.shields.io/badge/Machine%20Learning-✓-green)  
 
 ## Description  
 
