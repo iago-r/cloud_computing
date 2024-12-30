@@ -1,7 +1,6 @@
 import requests, time
 
 count = 0
-max_requests = 100
 
 ip = 'localhost'
 port = 32030
@@ -21,7 +20,7 @@ with open('response.out', 'w') as f:
 
 # Abrir 'response.out' uma vez, para sobrescrever a cada requisição
 with open('response.out', 'w') as f:
-    while count < max_requests:
+    while True:
         response = requests.post(url, json=data, headers=headers)
         
         print(f'[{count + 1}] [Status Code]: {response.status_code}')
