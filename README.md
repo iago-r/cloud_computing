@@ -23,7 +23,8 @@ The system architecture consists of:
 │
 ├── /assets              # Datasets and music lists
 │   ├── /datasets        # Datasets used to train the recommendation model
-│   └── /musics_list     # List of songs used to simulate client-server communication
+│   ├── /musics_list     # List of songs used to simulate client-server communication
+│   └── /tests           # Codes to test de app
 │
 ├── /client              # Code to simulate client requests
 │   └── client.py        # Script to simulate client-server communication

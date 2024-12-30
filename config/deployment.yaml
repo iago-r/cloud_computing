@@ -22,7 +22,7 @@ spec:
         image: iagosrios/playlists-recommender-ml:0.1
         env:
         - name: DATASET_URL
-          value: "https://github.com/iago-r/cloud_computing/raw/refs/heads/main/assets/datasets/2023_spotify_ds1.csv"
+          value: "https://github.com/iago-r/cloud_computing/raw/refs/heads/main/assets/datasets/2023_spotify_ds2.csv"
         volumeMounts:
         - name: models
           mountPath: /models
